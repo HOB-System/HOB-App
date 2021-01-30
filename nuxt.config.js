@@ -1,10 +1,7 @@
 export default {
-  // Disable server-side rendering: https://go.nuxtjs.dev/ssr-mode
   ssr: false,
-
-  // Global page headers: https://go.nuxtjs.dev/config-head
   head: {
-    title: 'hob-app',
+    title: 'HOB-App',
     meta: [
       { charset: 'utf-8' },
       { name: 'viewport', content: 'width=device-width, initial-scale=1' },
@@ -14,45 +11,64 @@ export default {
       { rel: 'icon', type: 'image/x-icon', href: '/favicon.ico' }
     ]
   },
-
-  // Global CSS: https://go.nuxtjs.dev/config-css
-  css: [
-  ],
-
-  // Plugins to run before rendering page: https://go.nuxtjs.dev/config-plugins
+  css: [],
   plugins: [
   ],
-
-  // Auto import components: https://go.nuxtjs.dev/config-components
   components: true,
+  buildModules: ['@nuxt/typescript-build', '@nuxtjs/tailwindcss', '@nuxtjs/moment'],
 
-  // Modules for dev and build (recommended): https://go.nuxtjs.dev/config-modules
-  buildModules: [
-    // https://go.nuxtjs.dev/typescript
-    '@nuxt/typescript-build',
-    // https://go.nuxtjs.dev/tailwindcss
-    '@nuxtjs/tailwindcss',
-  ],
-
-  // Modules: https://go.nuxtjs.dev/config-modules
   modules: [
-    // https://go.nuxtjs.dev/axios
     '@nuxtjs/axios',
-    // https://go.nuxtjs.dev/pwa
     '@nuxtjs/pwa',
+    '@nuxtjs/firebase',
+    '@nuxtjs/toast',
+    ['nuxt-validate', {
+      lang: 'nl',
+      nuxti18n: {
+        locale: {
+          'nl': 'nl'
+        }
+      }
+    }]
   ],
-
-  // Axios module configuration: https://go.nuxtjs.dev/config-axios
   axios: {},
-
-  // PWA module configuration: https://go.nuxtjs.dev/pwa
   pwa: {
     manifest: {
-      lang: 'en'
-    }
+      name: 'HOB-App',
+      lang: 'nl',
+      background_color: '#3855a5',
+      dir: 'ltr',
+      display: 'minimal-ui',
+      theme_color: '#3855a5',
+    },
   },
-
-  // Build Configuration: https://go.nuxtjs.dev/config-build
-  build: {
-  }
+  firebase: {
+    config: {
+      apiKey: 'AIzaSyAqJVEk9lF4M9QUTPikPvHevgaEDhBWb9U',
+      authDomain: 'hob-system-8ab65.firebaseapp.com',
+      databaseURL: 'https://hob-system-8ab65.firebaseio.com',
+      projectId: 'hob-system-8ab65',
+      storageBucket: 'hob-system-8ab65.appspot.com',
+      messagingSenderId: '1058288639124',
+      appId: '1:1058288639124:web:7d3b96861c91282ec3e881',
+      measurementId: 'G-J069ZHS90L',
+    },
+    services: {
+      auth: true,
+      firestore: true,
+      messaging: true,
+      storage: true,
+    },
+    injectModule: false
+  },
+  toast: {},
+  io: {},
+  moment: {
+    defaultLocale: 'nl',
+    locales: ['nl']
+  },
+  sentry: {
+    // TODO: integrate sentry. (setup new organization)
+  },
+  build: {}
 }
