@@ -7,15 +7,15 @@
       </h1>
       <div class="links">
         <a
-          href="https://nuxtjs.org/"
+          href="http://harmonieorkestbrummen.nl"
           target="_blank"
           rel="noopener noreferrer"
           class="button--green"
         >
-          Documentation
+          H.O.B
         </a>
         <a
-          href="https://github.com/nuxt/nuxt.js"
+          href="https://github.com/HOB-System/HOB-App"
           target="_blank"
           rel="noopener noreferrer"
           class="button--grey"
