@@ -19,7 +19,7 @@
     "core-js": "^3.9.1",
     "firebase": "^8.2.9",
     "nuxt": "^2.15.2",
-    "nuxt-socket-io": "^1.1.14",
+    "nuxt-socket-io": "^1.1.17",
     "nuxt-validate": "^1.0.1"
   },
   "devDependencies": {
